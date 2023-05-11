@@ -1,4 +1,4 @@
-=== Sustainable WP ===
+=== Carbon Footprint ===
 
 Contributors:      littlebigthing
 Requires at least: 5.8
