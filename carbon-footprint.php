@@ -26,6 +26,7 @@ if ( is_admin() ) {
 
 // Get translation going.
 function carbonfootprint_plugin_init() {
+	
 	load_plugin_textdomain( 'carbon-footprint', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'plugins_loaded', 'carbonfootprint_plugin_init' );
@@ -36,7 +37,8 @@ add_action( 'plugins_loaded', 'carbonfootprint_plugin_init' );
  * @since 1.0
  */
 function carbonfootprint_admin_notice_hook() {
-    set_transient( 'carbonfootprint_activated', 1, 5 );
+
+	set_transient( 'carbonfootprint_activated', 1, 5 );
 }
 register_activation_hook( __FILE__, 'carbonfootprint_admin_notice_hook' );
 
@@ -89,7 +91,7 @@ add_action( 'admin_notices', 'carbonfootprint_admin_notice' );
 function carbonfootprint_clean_up() {
 
 	// Delete transient with report data
-    delete_transient( 'carbonfootprint_test' );
+	delete_transient( 'carbonfootprint_test' );
 	// Delete options if saved
 	delete_option( 'carbonfootprint_data' );
 }
