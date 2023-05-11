@@ -1,0 +1,263 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Carbon Footprint\n"
+"POT-Creation-Date: 2023-05-11 15:11+0200\n"
+"PO-Revision-Date: 2023-05-11 14:50+0200\n"
+"Last-Translator: Csaba Varszegi <csaba80@hotmail.com>\n"
+"Language-Team: Csaba Varszegi <csaba80@hotmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: carbon-footprint.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: carbon-footprint.php:61
+msgid ""
+"Sorry, it seems that your website is a local site, so it cannot be accessed "
+"to measure its carbon footprint. Try to activate the plugin on a site that "
+"can be accessed through the internet. "
+msgstr ""
+
+#: carbon-footprint.php:71
+msgid ""
+"Learn more about how sustainable your website is. Discover what kind of "
+"energy your server uses and how your site&rsquo;s carbon footprint compares "
+"to others. "
+msgstr ""
+
+#: carbon-footprint.php:73
+msgid "Test your site using Site Health"
+msgstr ""
+
+#: carbon-footprint.php:74
+msgid ""
+"Note that the test may take a while and make sure to look for passed tests "
+"if you do not see any new information after testing."
+msgstr ""
+
+#: dashboard/widget.php:22
+msgid "Your homepage has a large carbon footprint"
+msgstr ""
+
+#: dashboard/widget.php:48
+#, php-format
+msgid ""
+"<strong>%s grams of CO<sub>2</sub> is emitted each time your homepage is "
+"loaded.</strong>"
+msgstr ""
+
+#: dashboard/widget.php:54
+#, php-format
+msgid " That is more than %s times the average of 0.5 grams."
+msgstr ""
+
+#: dashboard/widget.php:60
+#, php-format
+msgid ""
+" For a website with %1$s monthly page views, that&lsquo;s %2$s kg CO2 per "
+"year, only for the homepage."
+msgstr ""
+
+#: dashboard/widget.php:67
+#, php-format
+msgid ""
+"<br>This is due to the large amount of data (%s MB!) needed to view the "
+"page. You can reduce this amount by making clever choices and optimising "
+"your page."
+msgstr ""
+
+#: dashboard/widget.php:77
+msgid "Opens in new tab"
+msgstr ""
+
+#: dashboard/widget.php:78
+msgid "Reduce your website&lsquo;s carbon footprint"
+msgstr ""
+
+#: inc/class-site-health.php:63
+msgid "The energy used by the hosting"
+msgstr ""
+
+#: inc/class-site-health.php:70
+msgid "The carbon footprint of the homepage"
+msgstr ""
+
+#: inc/class-site-health.php:89
+msgid "Determine whether your site uses renewable energy"
+msgstr ""
+
+#: inc/class-site-health.php:92 inc/class-site-health.php:153
+msgid "Sustainability"
+msgstr ""
+
+#: inc/class-site-health.php:97
+msgid ""
+"The test did not succeed. Please note that your site needs to be public to "
+"be tested. If it is, then something must have gone wrong... Consider testing "
+"your site manually to learn more about the carbon footprint of your website."
+msgstr ""
+
+#: inc/class-site-health.php:102 inc/class-site-health.php:163
+msgid "Test your site"
+msgstr ""
+
+#: inc/class-site-health.php:111
+msgid "Your website runs on bog standard energy"
+msgstr ""
+
+#: inc/class-site-health.php:114
+#, php-format
+msgid ""
+"Oh no, it looks like your website does not run on renewable energy (or your "
+"host is not listed in the Green Hosting Directory). You could save around "
+"10% of carbon emissions by using renewable energy. Please consider informing "
+"your hosting provider or switching to another host."
+msgstr ""
+
+#: inc/class-site-health.php:119
+msgid "Check out green hosting providers"
+msgstr ""
+
+#: inc/class-site-health.php:125
+msgid "Your website runs on renewable energy"
+msgstr ""
+
+#: inc/class-site-health.php:130
+#, php-format
+msgid ""
+"Nice! You save around 10% of carbon emissions by using renewable energy to "
+"run your website. The other part of the emission is determined by other "
+"parameters, such as the size of your web pages, the network and the end user "
+"devices."
+msgstr ""
+
+#: inc/class-site-health.php:150
+msgid "Estimate the carbon footprint of your homepage"
+msgstr ""
+
+#: inc/class-site-health.php:158
+msgid ""
+"The footprint of your homepage could not be determined. Please consider "
+"testing your site manually if you want to learn more about the carbon "
+"footprint of your website."
+msgstr ""
+
+#: inc/class-site-health.php:175
+msgid ""
+"Websites have an actual carbon footprint, because the energy needed to power "
+"them often comes from fossil fuels. "
+msgstr ""
+
+#: inc/class-site-health.php:181 inc/class-site-health.php:196
+#, php-format
+msgid "Your homepage is cleaner than %s of web pages tested"
+msgstr ""
+
+#: inc/class-site-health.php:188
+msgid ""
+"Your homepage is doing great, however, when compared to other pages tested. "
+"Keep up the good work!"
+msgstr ""
+
+#: inc/class-site-health.php:203
+msgid ""
+"Your homepage is doing quite good when compared to other pages tested. It "
+"might be doing even better with the information below."
+msgstr ""
+
+#: inc/class-site-health.php:211 inc/class-site-health.php:225
+#, php-format
+msgid "Your homepage is dirtier than %s of web pages tested"
+msgstr ""
+
+#: inc/class-site-health.php:216
+msgid ""
+"Your homepage had a relatively large footprint when compared to other pages "
+"tested. Learn how to improve it using the information below."
+msgstr ""
+
+#: inc/class-site-health.php:232
+msgid ""
+"Your homepage a large footprint when compared to other pages tested. It "
+"could be much lower. Learn how to improve it using the information below."
+msgstr ""
+
+#: inc/class-site-health.php:244
+msgid "Find out how to lower the footprint of your website"
+msgstr ""
+
+#: inc/class-site-health.php:245
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: inc/class-site-health.php:247
+msgid "Check other pages of your website with the Website Carbon Calculator"
+msgstr ""
+
+#: inc/class-site-health.php:268 inc/class-site-health.php:345
+msgid "The type of energy used to run your website could not be determined"
+msgstr ""
+
+#: inc/class-site-health.php:273 inc/class-site-health.php:351
+msgid "Renewable energy"
+msgstr ""
+
+#: inc/class-site-health.php:277 inc/class-site-health.php:355
+msgid "Bug standard energy"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: inc/class-site-health.php:299
+msgid "Carbon Footprint"
+msgstr ""
+
+#: inc/class-site-health.php:302
+msgid "Energy source server"
+msgstr ""
+
+#: inc/class-site-health.php:306
+msgid "Homepage size"
+msgstr ""
+
+#: inc/class-site-health.php:308
+#, php-format
+msgid "%s KB"
+msgstr ""
+
+#: inc/class-site-health.php:313
+msgid "Carbon emission"
+msgstr ""
+
+#: inc/class-site-health.php:315
+#, php-format
+msgid "%s g (grams) of CO2 per pageview for the homepage"
+msgstr ""
+
+#: inc/class-site-health.php:360
+msgid "Energy source"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://littlebigthings.be"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A plugin to spread awareness about the carbon footprint of websites and to "
+"help making WordPress sites become more sustainable. The information is "
+"based on data from the Website Carbon Calculator."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "LittleBigThings"
+msgstr ""
