@@ -1,6 +1,6 @@
 # Carbon Footprint
 
-This WordPress plugin is a collection of tests and information that provide insight about the digital sustainability of your website. You get an estimate of the carbon footprint and information about the (type of) energy use of your site.
+This WordPress plugin is a collection of tests and information that provides insight about the sustainability of your website. You get an estimate of the carbon footprint and information about the (type of) energy used by your site.
 
 The plugin uses the [Website Carbon API](https://api.websitecarbon.com), kindly provided by [Wholegrain Digital](https://www.wholegraindigital.com).
 You can test your site directly (including other pages then the homepage) using the [Website Carbon Calculator](https://www.websitecarbon.com).
