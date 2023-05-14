@@ -213,7 +213,7 @@ class SiteHealth {
                 );
                 $result['description'] = sprintf(
                     '<p>%s</p>',
-                    $base_description . esc_html__( 'Your homepage had a relatively large footprint when compared to other pages tested. Learn how to improve it using the information below.', 'carbon-footprint' )
+                    $base_description . esc_html__( 'Your homepage has a relatively large footprint when compared to other pages tested. Learn how to improve it using the information below.', 'carbon-footprint' )
                 );
                 $result['actions'] = '';
 
@@ -229,7 +229,7 @@ class SiteHealth {
                 $result['badge']['color'] = 'red';
                 $result['description'] = sprintf(
                     '<p>%s</p>',
-                    $base_description . esc_html__( 'Your homepage a large footprint when compared to other pages tested. It could be much lower. Learn how to improve it using the information below.', 'carbon-footprint' )
+                    $base_description . esc_html__( 'Your homepage has a large footprint when compared to other pages tested. It could be much lower. Learn how to improve it using the information below.', 'carbon-footprint' )
                 );
                 $result['actions'] = '';
             }
