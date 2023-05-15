@@ -48,7 +48,7 @@ class SiteHealth {
     }
 
     /**
-     * Adds tests to site health.
+     * Adds tests to Site Health.
      *
      * @access public
      * @since 1.0
@@ -330,7 +330,7 @@ class SiteHealth {
     }
 
     /**
-     * Adds information about the hosting to the server section of site health.
+     * Adds information about the hosting to the server section of Site Health.
      *
      * @since 1.0
      *
