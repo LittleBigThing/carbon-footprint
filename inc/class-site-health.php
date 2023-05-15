@@ -167,87 +167,101 @@ class SiteHealth {
 
         $this->get_carbon_report();
     
-        if ( is_array( $this->carbon_report ) ) {
+		if ( is_array( $this->carbon_report ) ) {
 
-            $cleaner_than = floatval( $this->carbon_report['cleanerThan'] );
+			$cleaner_than = floatval( $this->carbon_report['cleanerThan'] );
 
-            // set a basic explanation about the test
-            $base_description = esc_html__( 'Websites have an actual carbon footprint, because the energy needed to power them often comes from fossil fuels. ', 'carbon-footprint' );
+			// set a basic explanation about the test
+			$base_description = esc_html__( 'Websites have an actual carbon footprint, because the energy needed to power them often comes from fossil fuels. ', 'carbon-footprint' );
 
-            // if great
-            if ( $cleaner_than > 0.9 ) {
+			// get the date of testing
+			$report_date_text = '';
+			if ( $this->carbon_report['timestamp'] ) {
 
-                $result['label'] = sprintf(
-                    __( 'Your homepage is cleaner than %s of web pages tested', 'carbon-footprint' ),
-                    number_format_i18n( $cleaner_than * 100 ) . '%'
-                );
-                $result['status'] = 'good';
-                $result['badge']['color'] = 'green';
-                $result['description'] = sprintf(
-                    '<p>%s</p>',
-                    $base_description . esc_html__( 'Your homepage is doing great, however, when compared to other pages tested. Keep up the good work!', 'carbon-footprint' )
-                );
-                $result['actions'] = '';
+				$report_date_text = sprintf(
+					__( ' The test was performed on %s.', 'carbon-footprint' ),
+					wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), absint( $this->carbon_report['timestamp'] ) )
+				);
+			} 
 
-            // if good
-            } elseif ( $cleaner_than <= 0.9 && $cleaner_than > 0.5 ) {
+			// if great
+			if ( $cleaner_than > 0.9 ) {
 
-                $result['label'] = sprintf(
-                    __( 'Your homepage is cleaner than %s of web pages tested', 'carbon-footprint' ),
-                    number_format_i18n( $cleaner_than * 100 ) . '%'
-                );
-                $result['status'] = 'good';
-                $result['badge']['color'] = 'green';
-                $result['description'] = sprintf(
-                    '<p>%s</p>',
-                    $base_description . esc_html__( 'Your homepage is doing quite good when compared to other pages tested. It might be doing even better with the information below.', 'carbon-footprint' )
-                );
-                $result['actions'] = '';
+				$result['label'] = sprintf(
+					__( 'Your homepage is cleaner than %s of web pages tested', 'carbon-footprint' ),
+					number_format_i18n( $cleaner_than * 100 ) . '%'
+				);
+				$result['status'] = 'good';
+				$result['badge']['color'] = 'green';
+				$result['description'] = sprintf(
+					'<p>%s</p>',
+					$base_description . esc_html__( 'Your homepage is doing great, however, when compared to other pages tested. Keep up the good work!', 'carbon-footprint' )
+				);
+				$result['description'] .= $report_date_text;
+				$result['actions'] = '';
 
-            // if it could be better
-            } elseif ( $cleaner_than <= 0.5 && $cleaner_than > 0.1 ) {
+			// if good
+			} elseif ( $cleaner_than <= 0.9 && $cleaner_than > 0.5 ) {
 
-                $result['label'] = sprintf(
-                    __( 'Your homepage is dirtier than %s of web pages tested', 'carbon-footprint' ),
-                    number_format_i18n( (1 - $cleaner_than) * 100 ) . '%'
-                );
-                $result['description'] = sprintf(
-                    '<p>%s</p>',
-                    $base_description . esc_html__( 'Your homepage has a relatively large footprint when compared to other pages tested. Learn how to improve it using the information below.', 'carbon-footprint' )
-                );
-                $result['actions'] = '';
+				$result['label'] = sprintf(
+					__( 'Your homepage is cleaner than %s of web pages tested', 'carbon-footprint' ),
+					number_format_i18n( $cleaner_than * 100 ) . '%'
+				);
+				$result['status'] = 'good';
+				$result['badge']['color'] = 'green';
+				$result['description'] = sprintf(
+					'<p>%s</p>',
+					$base_description . esc_html__( 'Your homepage is doing quite good when compared to other pages tested. It might be doing even better with the information below.', 'carbon-footprint' )
+				);
+				$result['description'] .= $report_date_text;
+				$result['actions'] = '';
 
-            // if it is very bad
-            // Note: make this threshold filterable?
-            } elseif ( $cleaner_than <= 0.1 ) {
+			// if it could be better
+			} elseif ( $cleaner_than <= 0.5 && $cleaner_than > 0.1 ) {
 
-                $result['label'] = sprintf(
-                    __( 'Your homepage is dirtier than %s of web pages tested', 'carbon-footprint' ),
-                    number_format_i18n( (1 - $cleaner_than) * 100 ) . '%'
-                );
-                $result['status'] = 'critical';
-                $result['badge']['color'] = 'red';
-                $result['description'] = sprintf(
-                    '<p>%s</p>',
-                    $base_description . esc_html__( 'Your homepage has a large footprint when compared to other pages tested. It could be much lower. Learn how to improve it using the information below.', 'carbon-footprint' )
-                );
-                $result['actions'] = '';
-            }
-        }
+				$result['label'] = sprintf(
+					__( 'Your homepage is dirtier than %s of web pages tested', 'carbon-footprint' ),
+					number_format_i18n( (1 - $cleaner_than) * 100 ) . '%'
+				);
+				$result['description'] = sprintf(
+					'<p>%s</p>',
+					$base_description . esc_html__( 'Your homepage has a relatively large footprint when compared to other pages tested. Learn how to improve it using the information below.', 'carbon-footprint' )
+				);
+				$result['description'] .= $report_date_text;
+				$result['actions'] = '';
 
-        // add link to resources on how to improve website sustainability
-        $result['actions'] .= sprintf(
-            '<p><a href="%1$s" target="_blank">%2$s<span class="screen-reader-text">%3$s</span>
-            <span aria-hidden="true" class="dashicons dashicons-external"></span></a></p><p><a href="%4$s" target="_blank">%5$s<span class="screen-reader-text">%3$s</span>
-            <span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
-            esc_url( 'https://sustainablewebdesign.org/strategies/' ),
-            esc_html__( 'Find out how to lower the footprint of your website', 'carbon-footprint' ),
-            esc_html__( '(opens in a new tab)', 'carbon-footprint' ),
-            esc_url( 'https://www.websitecarbon.com' ),
-            esc_html__( 'Check other pages of your website with the Website Carbon Calculator', 'carbon-footprint' )
-        );
-    
-        wp_send_json_success( $result );
+			// if it is very bad
+			// Note: make this threshold filterable?
+			} elseif ( $cleaner_than <= 0.1 ) {
+
+				$result['label'] = sprintf(
+					__( 'Your homepage is dirtier than %s of web pages tested', 'carbon-footprint' ),
+					number_format_i18n( (1 - $cleaner_than) * 100 ) . '%'
+				);
+				$result['status'] = 'critical';
+				$result['badge']['color'] = 'red';
+				$result['description'] = sprintf(
+					'<p>%s</p>',
+					$base_description . esc_html__( 'Your homepage has a large footprint when compared to other pages tested. It could be much lower. Learn how to improve it using the information below.', 'carbon-footprint' )
+				);
+				$result['description'] .= $report_date_text;
+				$result['actions'] = '';
+			}
+		}
+
+		// add link to resources on how to improve website sustainability
+		$result['actions'] .= sprintf(
+			'<p><a href="%1$s" target="_blank">%2$s<span class="screen-reader-text">%3$s</span>
+			<span aria-hidden="true" class="dashicons dashicons-external"></span></a></p><p><a href="%4$s" target="_blank">%5$s<span class="screen-reader-text">%3$s</span>
+			<span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
+			esc_url( 'https://sustainablewebdesign.org/strategies/' ),
+			esc_html__( 'Find out how to lower the footprint of your website', 'carbon-footprint' ),
+			esc_html__( '(opens in a new tab)', 'carbon-footprint' ),
+			esc_url( 'https://www.websitecarbon.com' ),
+			esc_html__( 'Check other pages of your website with the Website Carbon Calculator', 'carbon-footprint' )
+		);
+
+		wp_send_json_success( $result );
     }
 
     /**
