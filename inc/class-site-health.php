@@ -179,8 +179,9 @@ class SiteHealth {
 			if ( $this->carbon_report['timestamp'] ) {
 
 				$report_date_text = sprintf(
-					__( ' The test was performed on %s.', 'carbon-footprint' ),
-					wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), absint( $this->carbon_report['timestamp'] ) )
+					__( ' The test was performed on %1$s at %2$s.', 'carbon-footprint' ),
+					wp_date( get_option( 'date_format' ), absint( $this->carbon_report['timestamp'] ) ),
+					wp_date( get_option( 'time_format' ), absint( $this->carbon_report['timestamp'] ) )
 				);
 			} 
 
