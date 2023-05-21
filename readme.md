@@ -20,5 +20,6 @@ Currently, the plugin gives you the following information:
 *Note that the results are cached for one day by the plugin.*
 
 ## Example screenshots
-<img width="841" alt="site-health-critical" src="https://github.com/LittleBigThing/carbon-footprint/assets/5901923/d5fd34a6-c028-4d91-8436-e5370ad49d54">
-<img width="818" alt="site-health-passed" src="https://github.com/LittleBigThing/carbon-footprint/assets/5901923/dabf1959-9130-4036-bd2d-045113776e25">
+
+1. <img width="841" alt="Critical test result" src="https://github.com/LittleBigThing/carbon-footprint/assets/5901923/d5fd34a6-c028-4d91-8436-e5370ad49d54">
+2. <img width="818" alt="Passed test results" src="https://github.com/LittleBigThing/carbon-footprint/assets/5901923/dabf1959-9130-4036-bd2d-045113776e25">
