@@ -26,7 +26,7 @@ if ( is_admin() ) {
 
 // Get translation going.
 function carbonfootprint_plugin_init() {
-	
+
 	load_plugin_textdomain( 'carbon-footprint', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'plugins_loaded', 'carbonfootprint_plugin_init' );
