@@ -39,9 +39,9 @@ function carbonfootprint_get_website_carbon_report() {
 
 		if ( array_key_exists( 'error', $body ) || empty( $body ) ) return false;
 
-		// set a transient to limit hitting the API each time
-		// 1 day, this is the same as the API uses to cache a request?
-		set_transient( 'carbonfootprint_test', $body, DAY_IN_SECONDS );
+		// set a transient to limit hitting the API each time:
+		// 1 week, the same as WP Site Health's cron. Note that the API caches the result for 1 day.
+		set_transient( 'carbonfootprint_test', $body, WEEK_IN_SECONDS );
 
 		// save data to alert if homepage is humongous, see dashboard widget
         // Note: make this threshold filterable?

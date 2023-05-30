@@ -29,7 +29,7 @@ Currently, the plugin gives you the following information:
 * Links to learn more about improving your website’s sustainability
 * A dashboard widget for admininstrators to warn them when the homepage’s footprint is worse then 90% of the tested sites
 
-*Note that the results are cached for one day by the plugin.*
+*Note that the results are cached for a week.*
 
 == Installation ==
 
