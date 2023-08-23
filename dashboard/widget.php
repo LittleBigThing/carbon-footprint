@@ -37,7 +37,7 @@ function carbonfootprint_dashboard_content() {
 	$carbonfootprint_data = get_option( 'carbonfootprint_data' );
 
 	// Get the data and the 'constants' that are needed.
-	$cleaner_than = floatval( $carbonfootprint_data['clean_than'] );
+	$cleaner_than = floatval( $carbonfootprint_data['cleaner_than'] );
 	$carbon_emission = floatval( $carbonfootprint_data['carbon_emission'] );
 	$homepage_size = absint( $carbonfootprint_data['homepage_size'] );
 	// Set defaults.
