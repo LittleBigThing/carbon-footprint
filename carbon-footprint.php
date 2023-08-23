@@ -5,7 +5,7 @@
  * Description: A plugin to spread awareness about the carbon footprint of websites and to help making WordPress sites become more sustainable. The information is based on data from the Website Carbon Calculator.
  * Requires at least: 5.8
  * Requires PHP: 5.6
- * Version: 1.0
+ * Version: 1.1
  * Author: LittleBigThings
  * Author URI: https://littlebigthings.be
  * License: GPLv2 or later
@@ -15,13 +15,13 @@
  * @package carbon-footprint
  */
 
+// loading these not only in admin (otherwise cron won’t work)
+require_once plugin_dir_path( __FILE__ ) . 'inc/helpers.php';
+require_once plugin_dir_path( __FILE__ ) . 'inc/class-site-health.php';
+
 // Only load when in admin.
 if ( is_admin() ) {
-
 	require_once plugin_dir_path( __FILE__ ) . 'dashboard/widget.php';
-
-	require_once plugin_dir_path( __FILE__ ) . 'inc/helpers.php';
-	require_once plugin_dir_path( __FILE__ ) . 'inc/class-site-health.php';
 }
 
 // Get translation going.
