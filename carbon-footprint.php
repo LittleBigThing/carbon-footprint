@@ -15,9 +15,11 @@
  * @package carbon-footprint
  */
 
-// loading these not only in admin (otherwise cron won’t work)
-require_once plugin_dir_path( __FILE__ ) . 'inc/helpers.php';
-require_once plugin_dir_path( __FILE__ ) . 'inc/class-site-health.php';
+// loading these only in admin or when cron is executed
+if ( is_admin() || wp_doing_cron() ) {
+	require_once plugin_dir_path( __FILE__ ) . 'inc/helpers.php';
+	require_once plugin_dir_path( __FILE__ ) . 'inc/class-site-health.php';
+}
 
 // Only load when in admin.
 if ( is_admin() ) {
@@ -54,7 +56,7 @@ function carbonfootprint_admin_notice() {
 
 		$class = 'notice notice-info';
 
-		// if this site is local show the notice that this plugin won't do a lot fof now
+		// if this site is local show the notice that this plugin won't do a lot for now
 		if ( 'local' === wp_get_environment_type() ) {
 
 			printf(
