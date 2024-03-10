@@ -58,7 +58,8 @@ function carbonfootprint_get_website_carbon_report() {
 			update_option( 'carbonfootprint_data', array(
 				'cleaner_than'		=> floatval( $body['cleanerThan'] ),
 				'carbon_emission'	=> floatval( $carbon_emission ),
-				'homepage_size'		=> absint( $body['bytes'] )
+				'homepage_size'		=> absint( $body['bytes'] ),
+				'rating'			=> sanitize_text_field( $body['rating'] )
 			));
 
 		} else {

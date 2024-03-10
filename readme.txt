@@ -65,6 +65,10 @@ Yes, no harm is expected. But you do it at your own risk.
 
 == Changelog ==
 
+** Version 1.2 **
+
+* add carbon rating
+
 ** Version 1.1.1 **
 
 * fix cron

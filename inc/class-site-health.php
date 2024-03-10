@@ -170,9 +170,17 @@ class SiteHealth {
 		if ( is_array( $this->carbon_report ) ) {
 
 			$cleaner_than = floatval( $this->carbon_report['cleanerThan'] );
+			$rating = esc_html( $this->carbon_report['rating'] );
+
+			// put rating first in description
+			$base_description = sprintf(
+				'<p>The <a href="%1$s" target="_blank">carbon rating</a> for your homepage is <strong>%2$s</strong>.</p>',
+				esc_url( 'https://sustainablewebdesign.org/digital-carbon-ratings/' ),
+				$rating
+			);
 
 			// set a basic explanation about the test
-			$base_description = esc_html__( 'Websites have an actual carbon footprint, because the energy needed to power them often comes from fossil fuels. ', 'carbon-footprint' );
+			$base_description .= esc_html__( 'Websites have an actual carbon footprint, because the energy needed to power them often comes from fossil fuels. ', 'carbon-footprint' );
 
 			// get the date of testing
 			$report_date_text = '';
@@ -250,7 +258,7 @@ class SiteHealth {
 			}
 		}
 
-		// add link to resources on how to improve website sustainability
+		// add links to resources on how to improve website sustainability
 		$result['actions'] .= sprintf(
 			'<p><a href="%1$s" target="_blank">%2$s<span class="screen-reader-text">%3$s</span>
 			<span aria-hidden="true" class="dashicons dashicons-external"></span></a></p><p><a href="%4$s" target="_blank">%5$s<span class="screen-reader-text">%3$s</span>
@@ -278,6 +286,9 @@ class SiteHealth {
 		$this->get_carbon_report();
 
 		if ( $this->carbon_report === false ) return $debug_info;
+
+		// Rating
+		$rating = esc_html( $this->carbon_report['rating'] );
 
 		// Energy source
 		$energy = esc_html__( 'The type of energy used to run your website could not be determined', 'carbon-footprint' );
@@ -316,6 +327,10 @@ class SiteHealth {
 				'energy_source' => array(
 					'label'    => __( 'Energy source server', 'carbon-footprint' ),
 					'value'   => $energy,
+				),
+				'rating' => array(
+					'label'    => __( 'Carbon Rating', 'carbon-footprint' ),
+					'value'   => $rating,
 				),
 				'homepage_size' => array(
 					'label'    => __( 'Homepage size', 'carbon-footprint' ),

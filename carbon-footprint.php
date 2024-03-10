@@ -5,7 +5,7 @@
  * Description: A plugin to spread awareness about the carbon footprint of websites and to help making WordPress sites become more sustainable. The information is based on data from the Website Carbon Calculator.
  * Requires at least: 5.8
  * Requires PHP: 5.6
- * Version: 1.1.1
+ * Version: 1.2
  * Author: LittleBigThings
  * Author URI: https://littlebigthings.be
  * License: GPLv2 or later
