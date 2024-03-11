@@ -2,10 +2,10 @@
 /**
  * Plugin Name: Carbon Footprint
  * Plugin URI: https://littlebigthings.be
- * Description: A plugin to spread awareness about the carbon footprint of websites and to help making WordPress sites become more sustainable. The information is based on data from the Website Carbon Calculator.
+ * Description: A plugin to spread awareness about the carbon footprint of websites and to help making WordPress sites become more sustainable. It adds information to WordPress’ Site Health tool about the carbon footprint of the homepage and the nature of the energy used by the host to power the website. The information is based on data from the Website Carbon Calculator.
  * Requires at least: 5.8
  * Requires PHP: 5.6
- * Version: 1.2
+ * Version: 1.2.1
  * Author: LittleBigThings
  * Author URI: https://littlebigthings.be
  * License: GPLv2 or later

@@ -65,6 +65,10 @@ Yes, no harm is expected. But you do it at your own risk.
 
 == Changelog ==
 
+** Version 1.2.1 **
+
+* modify plugin description to clarify what plugin does
+
 ** Version 1.2 **
 
 * add carbon rating
