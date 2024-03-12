@@ -174,7 +174,7 @@ class SiteHealth {
 
 			// put rating first in description
 			$base_description = sprintf(
-				'<p>The <a href="%1$s" target="_blank">carbon rating</a> for your homepage is <strong>%2$s</strong>.</p>',
+				'<p>The <a href="%1$s" target="_blank">carbon rating</a> for your homepage is <strong>%2$s</strong>, on a scale of A to F.</p>',
 				esc_url( 'https://sustainablewebdesign.org/digital-carbon-ratings/' ),
 				$rating
 			);
