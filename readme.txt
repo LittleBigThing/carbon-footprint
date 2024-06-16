@@ -4,10 +4,11 @@ Contributors:      littlebigthing
 Requires at least: 5.8
 Tested up to:      6.2
 Requires PHP:      5.6
-Stable tag:        1.0
+Stable tag:        1.2.1
 License:           GPLv2 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Tags:              sustainability, sustainable, site health, carbon footprint
+A plugin to spread awareness about the carbon footprint of websites and to help making WordPress sites become more sustainable.
 
 == Description ==
 
