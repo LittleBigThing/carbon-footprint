@@ -16,16 +16,38 @@ function carbonfootprint_get_website_carbon_report() {
 	$body = get_transient( 'carbonfootprint_test' );
 	if ( $body ) return $body;
 
-	// if there is no transient, let’s do the work
-	$api_url = 'https://api.websitecarbon.com/site';
+	// get the homepage (we only test the homepage: awareness, and not additional load, remember?)
 	$home_url = get_home_url();
+	$home_url_alt = get_home_url( null, '', null ); // homepage for Green Web Foundation API without scheme
+	if ( ! $home_url || ! $home_url_alt ) return false;
 
-	if ( ! $home_url ) return false;
-
-	// build the query string and attach to the API url
-	$test_url = add_query_arg( array(
+	// if there is no transient, let’s set up those API calls
+	// PageSpeed Insights API from Google
+	$api_pagespeed_insights = 'https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?category=performance&strategy=&desktop'; // default to desktop? For now, same as in API
+	$url_pagespeed_insights = add_query_arg( array(
 		'url' => urlencode( $home_url ),
-	), $api_url );
+	), $api_pagespeed_insights );
+	$request_pagespeed_insights = array(
+		'url' => $url_pagespeed_insights
+	);
+
+	// Greencheck API from the Green Web Foundation
+	$api_green_web_foundation = 'https://api.thegreenwebfoundation.org/api/v3/greencheck/';
+	$url_green_web_foundation = add_query_arg( array(
+		'hostname' => urlencode( $home_url_alt ),
+	), $api_green_web_foundation );
+	$request_green_web_foundation = array(
+		'url' => $url_green_web_foundation
+	);
+
+	// Website Carbon API from Wholegrain Digital
+	$api_website_carbon = 'https://api.websitecarbon.com/data';
+	$url_website_carbon = add_query_arg( array(
+		'url' => urlencode( $home_url ),
+	), $api_website_carbon );
+	$request_website_carbon = array(
+		'url' => $url_website_carbon
+	);
 
 	// get the report
 	$response = wp_remote_get(
