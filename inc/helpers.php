@@ -60,7 +60,7 @@ function carbonfootprint_get_website_carbon_report() {
 				'carbon_emission'	=> floatval( $carbon_emission ),
 				'homepage_size'		=> absint( $body['bytes'] ),
 				'rating'			=> sanitize_text_field( $body['rating'] )
-			));
+			), false );
 
 		} else {
 
