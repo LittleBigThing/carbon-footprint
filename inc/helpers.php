@@ -56,7 +56,7 @@ function carbonfootprint_get_website_carbon_report() {
 
 			$result = json_decode( $response->body );
 
-			// is the site hosted green, check only if its not the lighthouse result
+			// is the site hosted green?
 			if ( property_exists( $result, 'green' ) ) {
 
 				if ( $result->green ) {
