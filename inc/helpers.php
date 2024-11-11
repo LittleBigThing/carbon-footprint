@@ -57,7 +57,7 @@ function carbonfootprint_get_website_carbon_report() {
 			$result = json_decode( $response->body );
 
 			// is the site hosted green, check only if its not the lighthouse result
-			if ( ! $result->lighthouseResult ) {
+			if ( property_exists( $result, 'green' ) ) {
 
 				if ( $result->green ) {
 
@@ -70,7 +70,7 @@ function carbonfootprint_get_website_carbon_report() {
 			}
 
 			// get the page size
-			if ( $result->lighthouseResult->audits->{'total-byte-weight'} ) {
+			if ( property_exists( $result, 'lighthouseResult' ) ) {
 
 				$data['bytes'] = (int) $result->lighthouseResult->audits->{'total-byte-weight'}->numericValue;
 			}
