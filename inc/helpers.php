@@ -73,6 +73,10 @@ function carbonfootprint_get_website_carbon_report() {
 			if ( property_exists( $result, 'lighthouseResult' ) ) {
 
 				$data['bytes'] = (int) $result->lighthouseResult->audits->{'total-byte-weight'}->numericValue;
+			
+				if ( empty( $data['bytes'] ) ) {
+					return error_log( 'Something went wrong with the Google API!' ); // is there a clear error to display?
+				}
 			}
 
 		} else {
