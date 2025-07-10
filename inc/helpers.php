@@ -26,7 +26,7 @@ function carbonfootprint_get_website_carbon_report() {
 		array(
 			'url' => urlencode( $home_url ),
 		),
-		'https://pagespeedonline.googleapis.com/pagespeedonline/v5/runPagespeed?category=performance&strategy=desktop' // default to desktop? For now, same as in API
+		'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?category=performance&strategy=desktop' // default to desktop? For now, same as in API
 	);
 	$request_pagespeed_insights = array(
 		'url' => $url_pagespeed_insights
